@@ -1,7 +1,7 @@
 import Head from "next/head";
 import Layout, { siteTitle } from "../components/Layout/layout";
 import utilStyles from "../styles/utils.module.scss";
-import Link from 'next/link';
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -30,7 +30,8 @@ export default function Home() {
           and share my experience during this journey.
         </p>
         <p>
-          You can start reading my <Link href = "/blog">blog</Link> or check out my <Link href = "/cv">CV</Link>.
+          You can start reading my <Link href="/blog">blog</Link> or check out
+          my <Link href="/cv">CV</Link>.
         </p>
       </section>
     </Layout>
