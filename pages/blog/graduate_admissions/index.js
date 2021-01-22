@@ -31,9 +31,9 @@ export default ({ posts }) =>
         <Layout>
         {posts.map(({ slug, title, blogReference }) => (
             blogReference === "graduate_admissions"
-                ? (<Link key={slug} href={`/blog/graduate_admissions/posts/${slug}`}>
+                ? (<h3><Link key={slug} href={`/blog/graduate_admissions/posts/${slug}`}>
                     <a>{title}</a>
-                </Link>)
+                </Link></h3>)
                 : null
         ))}
         </Layout>
