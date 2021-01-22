@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { GraphQLClient } from 'graphql-request';
 import Layout from "../../../components/Layout/layout";
+import styles from "../bloglist.module.scss";
 
 
 export async function getStaticProps() {
@@ -31,8 +32,8 @@ export default ({ posts }) =>
         <Layout>
             {posts.map(({ slug, title, blogReference }) => (
                 blogReference === "life_in_berlin"
-                    ? (<h3><Link key={slug} href={`/blog/life_in_berlin/posts/${slug}`}>
-                        <a>{title}</a>
+                    ? (<h3 ><Link key={slug} href={`/blog/life_in_berlin/posts/${slug}`}>
+                        <a className={styles.postTitle}>{title}</a>
                     </Link></h3>)
                     : null
             ))}
