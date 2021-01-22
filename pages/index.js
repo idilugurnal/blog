@@ -4,6 +4,7 @@ import utilStyles from "../styles/utils.module.scss";
 import Link from "next/link";
 
 export default function Home() {
+
   return (
     <Layout home>
       <Head>

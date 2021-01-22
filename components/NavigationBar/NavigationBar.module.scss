@@ -1,9 +1,24 @@
 .navigationBar{
   float:left;
-  max-width: 240px;
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  display: block;
+  font-size: 1rem;
+  margin: 19% auto;
+  width: 25%;
+  max-width: 100%;
+  box-shadow: none;
+  background-color: #FFFFFF;
+  position: fixed;
+  overflow: hidden;
+  z-index: 10;
+
 }
 
 .subItem{
   font-size: 0.8rem;
 }
+
+.navBarText{
+
+}
+
+

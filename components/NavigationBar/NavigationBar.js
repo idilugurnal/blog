@@ -10,20 +10,22 @@ function SidebarItem({ label, items, depthStep = 10, depth = 0, ...rest }) {
     return (
         <>
             <ListItem button dense {...rest}>
-                <ListItemText style={{ paddingLeft: depth * depthStep }}>
-                    <span>{label}</span>
-                </ListItemText>
+                <div className={styles.navBarText}>
+                    <ListItemText style={{ paddingLeft: depth * depthStep}}>
+                        <span>{label}</span>
+                    </ListItemText>
+                </div>
             </ListItem>
             {Array.isArray(items) ? (
                 <List disablePadding dense>
                     {items.map((subItem) => (
                         <Link href={subItem.link}>
-                            <SidebarItem
-                                key={subItem.name}
-                                depth={depth + 1}
-                                depthStep={depthStep}
-                                {...subItem}
-                            />
+                                <SidebarItem
+                                    key={subItem.name}
+                                    depth={depth + 1}
+                                    depthStep={depthStep}
+                                    {...subItem}
+                                />
                         </Link>
                     ))}
                 </List>
@@ -38,12 +40,12 @@ export default function NavigationBar({items, depthStep, depth }){
             <List disablePadding dense>
                 {items.map((sidebarItem, index) => (
                     <Link href={sidebarItem.link}>
-                        <SidebarItem
-                            key={`${sidebarItem.name}${index}`}
-                            depthStep={depthStep}
-                            depth={depth}
-                            {...sidebarItem}
-                        />
+                            <SidebarItem
+                                key={`${sidebarItem.name}${index}`}
+                                depthStep={depthStep}
+                                depth={depth}
+                                {...sidebarItem}
+                            />
                     </Link>
                 ))}
             </List>

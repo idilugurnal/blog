@@ -1,19 +1,42 @@
 import Link from "next/link";
-import Head from "next/head";
+import { GraphQLClient } from 'graphql-request';
 import Layout from "../../../components/Layout/layout";
 
-export default function Blogs() {
-  return (
-    <Layout>
-      <Head>
-        <title>Blogs</title>
-      </Head>
-      <h1>Master in Germany</h1>
-      <h2>
-        <Link href="/">
-          <a>Back to home</a>
-        </Link>
-      </h2>
-    </Layout>
-  );
+
+export async function getStaticProps() {
+
+    const client = new GraphQLClient( "https://api-eu-central-1.graphcms.com/v2/ckk8jqcm1172i01xvgbaue29l/master");
+
+    const {posts} = await client.request(
+        `
+      { 
+        posts {
+          slug
+          title 
+          blogReference
+        }
+      }
+    `
+    );
+
+    return {
+        props: {
+            posts,
+        },
+    };
 }
+
+export default ({ posts }) =>
+    <div>
+        <Layout>
+            {posts.map(({ slug, title, blogReference }) => (
+                blogReference === "life_in_berlin"
+                    ? (<Link key={slug} href={`/blog/life_in_berlin/posts/${slug}`}>
+                        <a>{title}</a>
+                    </Link>)
+                    : null
+            ))}
+        </Layout>
+    </div>
+
+
