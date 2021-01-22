@@ -29,12 +29,12 @@ export async function getStaticProps() {
 export default ({ posts }) =>
     <div>
         <Layout>
-        {posts.map(({ slug, title, blogReference }) => (
-            blogReference === "graduate_admissions"
-                ? (<h3><Link key={slug} href={`/blog/graduate_admissions/posts/${slug}`}>
-                    <a>{title}</a>
-                </Link></h3>)
-                : null
-        ))}
+            {posts.map(({ slug, title, blogReference }) => (
+                blogReference === "graduate_admissions"
+                    ? (<h3><Link key={slug} href={`/blog/graduate_admissions/posts/${slug}`}>
+                        <a>{title}</a>
+                    </Link></h3>)
+                    : null
+            ))}
         </Layout>
     </div>
