@@ -2,20 +2,20 @@ import Link from "next/link";
 import Head from "next/head";
 import Layout from "../../components/Layout/layout";
 
-export default function Blogs() {
+export default function Index() {
   return (
     <Layout>
       <Head>
         <title>Blogs</title>
       </Head>
       <h3>
-        <Link href="/posts/graduate_admissions">
+        <Link href="/blog/graduate_admissions">
           <a>Graduate Admissions</a>
         </Link>
       </h3>
       <h3>
-        <Link href="/posts/master_in_germany">
-          <a>Master in Germany</a>
+        <Link href="/blog/life_in_berlin">
+          <a>Life in Berlin</a>
         </Link>
       </h3>
     </Layout>

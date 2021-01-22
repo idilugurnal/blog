@@ -30,7 +30,7 @@ export default function Home() {
           and share my experience during this journey.
         </p>
         <p>
-          You can start reading my <Link href="/posts/blogs">blog</Link> or
+          You can start reading my <Link href="/blog">blog</Link> or
           check out my <Link href="/cv">CV</Link>.
         </p>
       </section>
