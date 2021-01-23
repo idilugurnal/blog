@@ -6,8 +6,8 @@ import SinglePagePDFViewer from "../components/PDFViewer/SinglePagePDF";
 export default function Cv() {
   return (
     <Layout>
-      <Head> CV </Head>
-        <SinglePagePDFViewer pdf={'./CV/current-cv.pdf'} />
+      <Head> <title> CV </title></Head>
+        <SinglePagePDFViewer pdf={'./CV/current_cv.pdf'} />
     </Layout>
   );
 }
