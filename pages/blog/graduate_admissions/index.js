@@ -27,15 +27,25 @@ export async function getStaticProps() {
     };
 }
 
+let flag = true;
+const reference = "graduate_admissions";
+
 export default ({ posts }) =>
     <div >
         <Layout>
-            {posts.map(({ slug, title, blogReference }) => (
-                blogReference === "graduate_admissions"
-                    ? (<h3 ><Link key={slug} href={`/blog/graduate_admissions/posts/${slug}`}>
-                        <a className={styles.postTitle}>{title}</a>
-                    </Link></h3>)
+            {posts.forEach(({blogReference }) => (
+                blogReference === reference
+                    ? {flag} = false
                     : null
             ))}
+            {flag
+                ? <p> There are no posts for now. Working on creating content 😊 </p>
+                : posts.map(({ slug, title, blogReference }) => (
+                        blogReference === reference
+                            ? (<h3 ><Link key={slug} href={`/blog/${reference}/posts/${slug}`}>
+                                <a className={styles.postTitle}>{title}</a>
+                            </Link></h3>)
+                            : null
+                    ))}
         </Layout>
     </div>
