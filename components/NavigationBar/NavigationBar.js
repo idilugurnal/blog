@@ -4,13 +4,14 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import styles from './NavigationBar.module.scss'
 import Link from "next/link";
+import items from './MenuItems';
 
 function SidebarItem({ label, items, depthStep = 10, depth = 0, ...rest }) {
 
     return (
         <>
             <ListItem button dense {...rest}>
-                <div className={styles.navBarText}>
+                <div className={styles.subItem}>
                     <ListItemText style={{ paddingLeft: depth * depthStep}}>
                         <span>{label}</span>
                     </ListItemText>
@@ -34,7 +35,7 @@ function SidebarItem({ label, items, depthStep = 10, depth = 0, ...rest }) {
     )
 }
 
-export default function NavigationBar({items, depthStep, depth }){
+export default function NavigationBar({depthStep, depth }){
     return(
         <div className={styles.navigationBar}>
             <List disablePadding dense>

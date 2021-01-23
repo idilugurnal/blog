@@ -1,29 +1,18 @@
 import Head from "next/head";
+import React from 'react';
 import styles from "./layout.module.scss";
 import utilStyles from "../../styles/utils.module.scss";
 import Link from "next/link";
-import NavBar from '../NavigationBar/NavigationBar'
+import NavigationBar from '../NavigationBar/NavigationBar'
 
 const name = "Idil Ugurnal";
 export const siteTitle = "Idil Ugurnal Blog";
-const items = [
-    { name: 'home', label: 'Home', link:'/' },
-    { name: 'blog', label: 'Blog',
-        items: [
-            { name: 'graduateAdmissions', label: 'Graduate Admissions', link:'/blog/graduate_admissions' },
-            { name: 'lifeInBerlin', label: 'Life in Berlin', link:'/blog/life_in_berlin'},
-        ],
-        link:'/blog'},
-    { name: 'cv', label: 'CV', link:'/cv' },
-    { name: 'about', label: 'About', link:'/' },
-    { name: 'contact', label: 'Contact', link:'/' },
-]
 
 export default function Layout({ children, home }) {
   return (
       <div>
-          <div className = {styles.navBar}>
-              <NavBar items={items} />
+          <div>
+              <NavigationBar  />
           </div>
         <div className={styles.container}>
           <Head>
