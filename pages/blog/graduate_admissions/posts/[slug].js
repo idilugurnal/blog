@@ -53,11 +53,16 @@ export async function getStaticPaths() {
     };
 }
 
+function createMarkup(value) {
+    return {__html: value};
+}
+
 export default ({ post }) => (
+
     <React.Fragment>
         <Layout>
             <h1>{post.title}</h1>
-            <p>{post.content.text}</p>
+            <div dangerouslySetInnerHTML={createMarkup(post.content.html)} />
         </Layout>
 
     </React.Fragment>
