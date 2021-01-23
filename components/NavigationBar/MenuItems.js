@@ -6,7 +6,7 @@ export const items = [
             { name: 'lifeInBerlin', label: 'Life in Berlin', link:'/blog/life_in_berlin'},
         ],
         link:'/blog'},
-    { name: 'cv', label: 'CV', link:'/cv' },
+    { name: 'cv', label: 'CV', link:'/CV' },
     { name: 'about', label: 'About', link:'/' },
     { name: 'contact', label: 'Contact', link:'/' },
 ]

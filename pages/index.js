@@ -32,7 +32,7 @@ export default function Home() {
         </p>
         <p>
           You can start reading my <Link href="/blog">blog</Link> or
-          check out my <Link href="/cv">CV</Link>.
+          check out my <Link href="/CV">CV</Link>.
         </p>
       </section>
     </Layout>
