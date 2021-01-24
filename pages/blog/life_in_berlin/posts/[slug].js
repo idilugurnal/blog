@@ -1,14 +1,14 @@
-import { GraphQLClient, request } from 'graphql-request';
-import React from 'react';
+import { GraphQLClient, request } from "graphql-request";
+import React from "react";
 import Layout from "../../../../components/Layout/layout";
 
 const graphcms = new GraphQLClient(
-    'https://api-eu-central-1.graphcms.com/v2/ckk8jqcm1172i01xvgbaue29l/master'
+  "https://api-eu-central-1.graphcms.com/v2/ckk8jqcm1172i01xvgbaue29l/master"
 );
 
 export async function getStaticProps({ params }) {
-    const { post } = await graphcms.request(
-        `
+  const { post } = await graphcms.request(
+    `
     query ProductPageQuery($slug: String!) {
       post(where: { slug: $slug }) {
         title
@@ -22,20 +22,20 @@ export async function getStaticProps({ params }) {
       }
     }
   `,
-        {
-            slug: params.slug,
-        }
-    );
+    {
+      slug: params.slug,
+    }
+  );
 
-    return {
-        props: {
-            post,
-        },
-    };
+  return {
+    props: {
+      post,
+    },
+  };
 }
 
 export async function getStaticPaths() {
-    const { posts } = await graphcms.request(`
+  const { posts } = await graphcms.request(`
     {
       posts {
         slug
@@ -45,24 +45,23 @@ export async function getStaticPaths() {
     }
   `);
 
-    return {
-        paths: posts.map(({ slug }) => ({
-            params: { slug },
-        })),
-        fallback: false,
-    };
+  return {
+    paths: posts.map(({ slug }) => ({
+      params: { slug },
+    })),
+    fallback: false,
+  };
 }
 
 function createMarkup(value) {
-    return {__html: value};
+  return { __html: value };
 }
 
 export default ({ post }) => (
-    <React.Fragment>
-        <Layout>
-            <h1>{post.title}</h1>
-            <div dangerouslySetInnerHTML={createMarkup(post.content.html)} />
-        </Layout>
-
-    </React.Fragment>
+  <React.Fragment>
+    <Layout>
+      <h1>{post.title}</h1>
+      <div dangerouslySetInnerHTML={createMarkup(post.content.html)} />
+    </Layout>
+  </React.Fragment>
 );

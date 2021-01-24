@@ -4,7 +4,6 @@ import utilStyles from "../styles/utils.module.scss";
 import Link from "next/link";
 
 export default function Home() {
-
   return (
     <Layout home>
       <Head>
@@ -31,8 +30,8 @@ export default function Home() {
           and share my experience during this journey.
         </p>
         <p>
-          You can start reading my <Link href="/blog">blog</Link> or
-          check out my <Link href="/CV">CV</Link>.
+          You can start reading my <Link href="/blog">blog</Link> or check out
+          my <Link href="/CV">CV</Link>.
         </p>
       </section>
     </Layout>
