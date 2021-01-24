@@ -1,15 +1,26 @@
 import Head from "next/head";
-import React from "react";
+import React, { useState, useRef } from 'react';
+import { useOnClickOutside } from '../molecules/BurgerMenu/hooks';
 import styles from "./layout.module.scss";
 import utilStyles from "../../styles/utils.module.scss";
 import Link from "next/link";
 import NavigationBar from "../molecules/NavigationBar/NavigationBar";
 import { Container, Row, Col } from "react-bootstrap";
+import { ThemeProvider } from 'styled-components';
+import { GlobalStyles } from '../molecules/BurgerMenu/global';
+import { theme } from '../molecules/BurgerMenu/theme';
+import Burger from '../atoms/Burger/index';
+import Menu from '../atoms/Menu/index';
 
 const name = "Idil Ugurnal";
 export const siteTitle = "Idil Ugurnal Blog";
 
 export default function Layout({ children, home }) {
+
+  const [open, setOpen] = useState(false);
+  const node = useRef();
+  useOnClickOutside(node, () => setOpen(false));
+
   return (
     <div>
       <link
@@ -20,12 +31,19 @@ export default function Layout({ children, home }) {
         rel="stylesheet"
         href="https://maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap-theme.min.css"
       />
-      <Container fluid>
-        <Row>
-          <Col xs={2} md={2} xl={2} className={styles.navBar}>
-            <NavigationBar />
-          </Col>
-          <Col xs={9} md={9} xl={9}className={styles.container}>
+      <div>
+        <div>
+          <div>
+            <ThemeProvider theme={theme}>
+              <>
+                <div ref={node}>
+                  <Burger open={open} setOpen={setOpen} />
+                  <Menu open={open} setOpen={setOpen} />
+                </div>
+              </>
+            </ThemeProvider>
+          </div>
+          <div className={styles.container}>
             <Head>
               <link rel="icon" href="/favicon.ico" />
               <meta
@@ -72,10 +90,9 @@ export default function Layout({ children, home }) {
               )}
             </header>
             <main>{children}</main>
-          </Col>
-            <Col xs={1} md={1} xl={1}> </Col>
-        </Row>
-      </Container>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
