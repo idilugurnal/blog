@@ -1,21 +1,40 @@
 import React from 'react';
+import Link from 'next/link';
 import { bool } from 'prop-types';
 import { StyledMenu } from './Menu.styled';
 const Menu = ({ open }) => {
     return (
         <StyledMenu open={open}>
-            <a href="/">
-                <span role="img" aria-label="about us">&#x1f481;&#x1f3fb;&#x200d;&#x2642;&#xfe0f;</span>
-                About us
+            <Link href={"/"}>
+                <a>
+                    <span role="img" aria-label="home">&#127968;</span>
+                    Home
+                </a>
+            </Link>
+            <Link href={"/blog"}>
+                <a>
+                    <span role="img" aria-label="blog">&#128203;</span>
+                    Blog
+                </a>
+            </Link>
+            <Link href={"/about"}>
+            <a>
+                <span role="img" aria-label="about me">&#128105;</span>
+                About me
             </a>
-            <a href="/">
-                <span role="img" aria-label="price">&#x1f4b8;</span>
-                Pricing
-            </a>
-            <a href="/">
-                <span role="img" aria-label="contact">&#x1f4e9;</span>
-                Contact
-            </a>
+            </Link>
+            <Link href={"/CV"}>
+                <a>
+                    <span role="img" aria-label="price">&#x1f4b8;</span>
+                    CV
+                </a>
+            </Link>
+            <Link href={"/contact"}>
+                <a>
+                    <span role="img" aria-label="contact">&#x1f4e9;</span>
+                    Contact
+                </a>
+            </Link>
         </StyledMenu>
     )
 }
