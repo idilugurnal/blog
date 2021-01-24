@@ -22,10 +22,10 @@ export default function Layout({ children, home }) {
       />
       <Container fluid>
         <Row>
-          <Col xs={2}>
+          <Col xs={2} md={2} xl={2} className={styles.navBar}>
             <NavigationBar />
           </Col>
-          <Col xs={8} className={styles.container}>
+          <Col xs={9} md={9} xl={9}className={styles.container}>
             <Head>
               <link rel="icon" href="/favicon.ico" />
               <meta
@@ -73,7 +73,7 @@ export default function Layout({ children, home }) {
             </header>
             <main>{children}</main>
           </Col>
-            <Col xs={2}> </Col>
+            <Col xs={1} md={1} xl={1}> </Col>
         </Row>
       </Container>
     </div>
