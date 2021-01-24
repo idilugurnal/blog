@@ -7,8 +7,8 @@ export const items = [
         ],
         link:'/blog'},
     { name: 'cv', label: 'CV', link:'/CV' },
-    { name: 'about', label: 'About', link:'/' },
-    { name: 'contact', label: 'Contact', link:'/' },
+    { name: 'about', label: 'About', link:'/about' },
+    { name: 'contact', label: 'Contact', link:'/contact' },
 ]
 
 export default items;

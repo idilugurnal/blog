@@ -53,6 +53,10 @@ export async function getStaticPaths() {
     };
 }
 
+function createMarkup(value) {
+    return {__html: value};
+}
+
 export default ({ post }) => (
     <React.Fragment>
         <Layout>
