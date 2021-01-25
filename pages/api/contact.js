@@ -1,15 +1,16 @@
 import nodemailer from "nodemailer"
 
 //Create an environment variable for your password
-const emailPass = process.env.emailPass
+const emailPass = 'hakNiw-fokty8-wottez';
 
 const transporter = nodemailer.createTransport({
-    host: "smtp.ionos.de",
-    port: 25,
+    host:'smtp.mail.yahoo.com',
+    secure: false,
+    port: 465,
     auth: {
         user: "idilugurnal@yahoo.com",
         pass: emailPass
-    }
+    },
 })
 //[1]
 
@@ -44,6 +45,7 @@ const mailer = ({ senderMail, name, text, recipientMail }) => {
         transporter.sendMail(message, (error, info) =>
             error ? reject(error) : resolve(info)
         )
+
     })
 //[6]
 }

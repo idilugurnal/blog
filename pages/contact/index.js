@@ -4,6 +4,7 @@ import Link from "next/link";
 import ContactForm from "../../components/molecules/ContactForm/ContactForm";
 
 export default function Home() {
+
   return (
     <Layout>
       <Head>

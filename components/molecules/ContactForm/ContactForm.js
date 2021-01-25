@@ -176,7 +176,7 @@ class Contact extends Component {
         event.preventDefault()
 //[6]
 
-        const recipientMail = 'idilugurnal@yahoo.com';
+        const recipientMail = 'idilugurnal@icloud.com';
         const { name, mail, formContent } = this.state
 
         const res = await sendContactMail(recipientMail, name, mail, formContent)
@@ -191,6 +191,7 @@ class Contact extends Component {
 
         } else {
             this.setState({ formButtonText: "An error occurred. Please try again later." })
+            console.log(String(process.env.REACT_APP_NOT_SECRET_CODE))
         }
 //[7]
     }
