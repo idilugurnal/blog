@@ -176,7 +176,7 @@ class Contact extends Component {
         event.preventDefault()
 //[6]
 
-        const recipientMail = 'idilugurnal@icloud.com';
+        const recipientMail = 'idilugurnal@yahoo.com';
         const { name, mail, formContent } = this.state
 
         const res = await sendContactMail(recipientMail, name, mail, formContent)
@@ -190,7 +190,7 @@ class Contact extends Component {
             })
 
         } else {
-            this.setState({ formButtonText: "Please fill out all fields." })
+            this.setState({ formButtonText: "An error occurred. Please try again later." })
         }
 //[7]
     }
