@@ -1,0 +1,43 @@
+.socialContainer{
+  background: #eee;
+  padding: 25px 50px;
+}
+.youtube {
+  margin: 0 1rem;
+  transition: transform 250ms;
+  display: inline-block;
+  color: #eb3223;
+}
+.youtube:hover{
+  transform: translateY(-2px);
+}
+
+.facebook {
+  margin: 0 1rem;
+  transition: transform 250ms;
+  display: inline-block;
+  color: #4968ad;
+}
+.facebook:hover{
+  transform: translateY(-2px);
+}
+
+.twitter {
+  margin: 0 1rem;
+  transition: transform 250ms;
+  display: inline-block;
+  color: #49a1eb;
+}
+.twitter:hover{
+  transform: translateY(-2px);
+}
+
+.instagram {
+  margin: 0 1rem;
+  transition: transform 250ms;
+  display: inline-block;
+  color: black;
+}
+.instagram:hover{
+  transform: translateY(-2px);
+}

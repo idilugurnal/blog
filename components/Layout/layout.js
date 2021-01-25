@@ -8,9 +8,11 @@ import { ThemeProvider } from "styled-components";
 import { theme } from "../molecules/BurgerMenu/theme";
 import Burger from "../atoms/Burger/index";
 import Menu from "../atoms/Menu/index";
+import Footer from "../molecules/Footer/Footer";
 
 const name = "Idil Ugurnal";
 export const siteTitle = "Idil Ugurnal Blog";
+
 
 export default function Layout({ children, home }) {
   const [open, setOpen] = useState(false);
@@ -80,6 +82,7 @@ export default function Layout({ children, home }) {
         </header>
         <main>{children}</main>
       </div>
+        <Footer/>
     </div>
   );
 }
