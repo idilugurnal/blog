@@ -82,7 +82,7 @@ export default function Layout({ children, home }) {
         </header>
         <main>{children}</main>
       </div>
-        <Footer/>
+        <Footer className={styles.footer}/>
     </div>
   );
 }

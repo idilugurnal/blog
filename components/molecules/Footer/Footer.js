@@ -6,20 +6,24 @@ import styles from './Footer.module.scss';
 export default function SocialFollow() {
     return (
         <div className={styles.socialContainer}>
-            <a href="https://www.youtube.com/c/jamesqquick"
-               className={styles.twitter}>
-                <FaTwitter />
+            <a href="https://twitter.com/idilugurnal"
+               className={styles.twitter}
+               target="_blank" rel="noopener noreferrer">
+                <FaTwitter size={25}/>
             </a>
-            <a href="https://www.facebook.com/learnbuildteach/"
-               className={styles.facebook}>
-                <FaLinkedin/>
+            <a href="https://www.linkedin.com/in/idilugurnal/"
+               className={styles.linkedin}
+               target="_blank" rel="noopener noreferrer">
+                <FaLinkedin size={25}/>
             </a>
-            <a href="https://www.twitter.com/jamesqquick" className={styles.youtube}>
-                <FaInstagram />
+            <a href="https://www.instagram.com/idilugurnal/" className={styles.instagram}
+               target="_blank" rel="noopener noreferrer">
+                <FaInstagram size={25}/>
             </a>
-            <a href="https://www.instagram.com/learnbuildteach"
-               className={styles.instagram}>
-                <FaGithub />
+            <a href="https://github.com/idilugurnal"
+               className={styles.github}
+               target="_blank" rel="noopener noreferrer">
+                <FaGithub size={25}/>
             </a>
         </div>
     );

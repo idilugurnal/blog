@@ -1,24 +1,26 @@
 .socialContainer{
   background: #eee;
-  padding: 25px 50px;
+  margin-top: 1rem;
+  padding: 1rem;
+  text-align: center;
 }
-.youtube {
+.instagram {
   margin: 0 1rem;
   transition: transform 250ms;
   display: inline-block;
   color: #eb3223;
 }
-.youtube:hover{
+.instagram:hover{
   transform: translateY(-2px);
 }
 
-.facebook {
+.linkedin {
   margin: 0 1rem;
   transition: transform 250ms;
   display: inline-block;
   color: #4968ad;
 }
-.facebook:hover{
+.linkedin:hover{
   transform: translateY(-2px);
 }
 
@@ -32,12 +34,12 @@
   transform: translateY(-2px);
 }
 
-.instagram {
+.github {
   margin: 0 1rem;
   transition: transform 250ms;
   display: inline-block;
   color: black;
 }
-.instagram:hover{
+.github:hover{
   transform: translateY(-2px);
 }
